@@ -407,7 +407,8 @@ body{
 
     <div class="pricing-container">
 
-      <div class="pricing-card">
+      <div class="pricing-card"
+    onclick="selectFormat('1L - 5000 FCFA')">
 
         <span class="volume">1L</span>
 
@@ -419,7 +420,8 @@ body{
 
       </div>
 
-      <div class="pricing-card featured">
+      <div class="pricing-card featured"
+    onclick="selectFormat('2L - 8000 FCFA')">
 
         <span class="volume">2L</span>
 
@@ -431,7 +433,8 @@ body{
 
       </div>
 
-      <div class="pricing-card">
+      <div class="pricing-card"
+       onclick="selectFormat('10L - 40000 FCFA')">
 
         <span class="volume">10L</span>
 
@@ -470,7 +473,7 @@ body{
 
      <input type="tel" id="phone" placeholder="Votre numéro">
 
-     <input type="text" id="quantity" placeholder="Quantité ou format">
+     <input type="text" id="quantity" placeholder="Quantité">
 
      <textarea id="message" placeholder="Votre message"></textarea>
 
@@ -540,6 +543,17 @@ return;
 
  });
 
+ function selectFormat(format){
+
+document.getElementById("quantity").value = format;
+
+document
+.getElementById("quantity")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
  </script>
  </body>
  
