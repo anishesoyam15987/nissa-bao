@@ -356,6 +356,7 @@ body{
 }
 
 </style>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -473,7 +474,10 @@ body{
 
      <textarea id="message" placeholder="Votre message"></textarea>
 
-      <button type="submit">
+      <div class="g-recaptcha"
+     data-sitekey="6Lc8JvgsAAAAABs1EICDn9TFV0jl26yZM7jDzTS9">
+     </div>
+     <button type="submit">
       Envoyer la commande
      </button>
 
@@ -503,6 +507,16 @@ body{
   .addEventListener("submit", function(e){
 
  e.preventDefault();
+    let captchaResponse =
+grecaptcha.getResponse();
+
+if(captchaResponse.length === 0){
+
+alert("Veuillez confirmer le CAPTCHA.");
+
+return;
+
+}
 
  let name = document.getElementById("name").value;
  let phone = document.getElementById("phone").value;
