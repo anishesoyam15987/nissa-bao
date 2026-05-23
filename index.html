@@ -354,7 +354,28 @@ body{
   }
 
 }
+.logo{
+  width:170px;
+  margin-bottom:25px;
+  filter:drop-shadow(0 0 20px rgba(243,214,164,0.3));
+  animation:floatingLogo 4s ease-in-out infinite;
+}
 
+@keyframes floatingLogo{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
 </style>
    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -364,6 +385,7 @@ body{
   <header>
 
     <div class="hero">
+      <img src="logo.png" class="logo" alt="Nissa Bao Logo">
 
       <h1 class="floating-title">Nissa BAO</h1>
       <h2>Jus de Bouye Sénégalais</h2>
