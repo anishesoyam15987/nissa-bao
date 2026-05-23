@@ -1,0 +1,533 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Nissa BAO | Jus de Bouye Sénégalais</title>
+
+  <meta name="description"
+    content="Découvrez le vrai goût du jus de bouye sénégalais. Naturel, frais et authentique avec Nissa BAO." />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+      url("beach-bouye.jpg");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero{
+      max-width:800px;
+    }
+
+    .hero h1{
+      font-size:75px;
+      color:#f3d6a4;
+      margin-bottom:20px;
+      letter-spacing:2px;
+    }
+
+    .hero h2{
+      font-size:28px;
+      font-weight:300;
+      margin-bottom:25px;
+      color:white;
+    }
+
+    .hero p{
+      font-size:20px;
+      line-height:1.8;
+      color:#e4e4e4;
+    }
+
+    .hero a{
+      display:inline-block;
+      margin-top:40px;
+      padding:18px 40px;
+      background:#f3d6a4;
+      color:#111;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:bold;
+      transition:0.3s;
+      font-size:18px;
+    }
+
+    .hero a:hover{
+      transform:scale(1.05);
+      background:#ffdca8;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .about-text h2{
+      font-size:50px;
+      color:#f3d6a4;
+      margin-bottom:25px;
+    }
+
+    .about-text p{
+      line-height:1.9;
+      color:#d9d9d9;
+      font-size:18px;
+    }
+
+    .pricing-section{
+      background:#141414;
+      text-align:center;
+    }
+
+    .pricing-section h2{
+      font-size:50px;
+      color:#f3d6a4;
+      margin-bottom:70px;
+    }
+
+    .pricing-container{
+      display:flex;
+      justify-content:center;
+      gap:35px;
+      flex-wrap:wrap;
+    }
+
+    .pricing-card{
+      background:linear-gradient(145deg,#1c1c1c,#101010);
+      width:320px;
+      padding:45px 30px;
+      border-radius:30px;
+      transition:0.4s;
+      border:1px solid rgba(243,214,164,0.2);
+    }
+
+    .pricing-card:hover{
+      transform:translateY(-10px);
+      border-color:#f3d6a4;
+    }
+
+    .featured{
+      border:2px solid #f3d6a4;
+      transform:scale(1.04);
+    }
+
+    .volume{
+      display:inline-block;
+      background:#f3d6a4;
+      color:#111;
+      padding:10px 22px;
+      border-radius:50px;
+      font-weight:bold;
+      margin-bottom:25px;
+    }
+
+    .pricing-card h3{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .pricing-card p{
+      color:#cfcfcf;
+      line-height:1.7;
+    }
+
+    .gallery-title{
+      text-align:center;
+      font-size:50px;
+      color:#f3d6a4;
+      margin-bottom:60px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:500px;
+      object-fit:cover;
+      border-radius:25px;
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    .form-section{
+      background:#181818;
+      border-radius:30px;
+      padding:60px;
+      margin-top:80px;
+    }
+
+    .form-section h2{
+      text-align:center;
+      font-size:50px;
+      color:#f3d6a4;
+      margin-bottom:40px;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      max-width:700px;
+      margin:auto;
+    }
+
+    input, textarea{
+      padding:18px;
+      border:none;
+      border-radius:15px;
+      background:#242424;
+      color:white;
+      font-size:16px;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:none;
+    }
+
+    button{
+      padding:18px;
+      border:none;
+      border-radius:50px;
+      background:#f3d6a4;
+      color:#111;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#ffdca8;
+      transform:scale(1.03);
+    }
+
+    footer{
+      text-align:center;
+      padding:50px 20px;
+      color:#cfcfcf;
+    }
+
+    .whatsapp{
+      color:#f3d6a4;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .about-text{
+        text-align:center;
+      }
+
+      .pricing-card{
+        width:100%;
+      }
+
+      .gallery img{
+        height:350px;
+      }
+
+    }
+
+  </style>
+  <style>
+
+TOUT TON CSS...
+
+html{
+  scroll-behavior:smooth;
+}
+
+.hero{
+  animation:fadeUp 1.5s ease;
+}
+
+.pricing-card,
+.gallery img,
+.about img,
+.form-section{
+  transition:0.4s;
+}
+
+.pricing-card:hover,
+.gallery img:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+button:hover,
+.hero a:hover{
+  box-shadow:0 0 25px rgba(243,214,164,0.5);
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+</style>
+<style>
+
+body{
+  background:black;
+}
+
+/* TON NOUVEAU STYLE ICI */
+
+.floating-title{
+  animation:floatingText 3s ease-in-out infinite;
+}
+
+@keyframes floatingText{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="hero">
+
+      <h1 class="floating-title">Nissa BAO</h1>
+      <h2>Jus de Bouye Sénégalais</h2>
+
+      <p>
+        Découvrez la fraîcheur naturelle du bouye dans une expérience
+        authentique, raffinée et moderne.
+      </p>
+
+      <a href="https://wa.me/221774320706">
+        Commander Maintenant
+      </a>
+
+    </div>
+
+  </header>
+
+  <section class="about">
+
+    <img src="bouye-drink.jpg" alt="Jus de Bouye Sénégalais">
+
+    <div class="about-text">
+
+      <h2>Le goût du naturel</h2>
+
+      <p>
+        Préparé avec soin à partir du fruit du baobab,
+        notre jus de bouye allie tradition sénégalaise,
+        fraîcheur naturelle et élégance moderne.
+        Une boisson riche en saveurs et idéale
+        pour vos moments de détente.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="pricing-section">
+
+    <h2>Nos Formats & Prix</h2>
+
+    <div class="pricing-container">
+
+      <div class="pricing-card">
+
+        <span class="volume">1L</span>
+
+        <h3>5000 FCFA</h3>
+
+        <p>
+          Fraîcheur naturelle et goût authentique.
+        </p>
+
+      </div>
+
+      <div class="pricing-card featured">
+
+        <span class="volume">2L</span>
+
+        <h3>8000 FCFA</h3>
+
+        <p>
+          Le format idéal à partager en famille.
+        </p>
+
+      </div>
+
+      <div class="pricing-card">
+
+        <span class="volume">10L</span>
+
+        <h3>40000 FCFA</h3>
+
+        <p>
+          Idéal pour événements et grandes occasions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2 class="gallery-title">Galerie</h2>
+
+    <div class="gallery">
+
+      <img src="beach-bouye.jpg" alt="Bouye Sénégal">
+      <img src="bouye-drink.jpg" alt="Jus naturel de bouye">
+
+    </div>
+
+  </section>
+
+  <section class="form-section">
+
+    <h2>Commander</h2>
+
+     <form id="whatsapp-form">
+
+      <input type="text" id="name" placeholder="Votre nom">
+
+     <input type="tel" id="phone" placeholder="Votre numéro">
+
+     <input type="text" id="quantity" placeholder="Quantité ou format">
+
+     <textarea id="message" placeholder="Votre message"></textarea>
+
+      <button type="submit">
+      Envoyer la commande
+     </button>
+
+     </form>
+
+  </section>
+
+  <footer>
+
+    <p>
+      WhatsApp :
+      <a class="whatsapp" href="https://wa.me/221774320706">
+        +221 77 432 07 06
+      </a>
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 Nissa BAO - Jus de Bouye Sénégalais
+    </p>
+
+  </footer>
+  <script>
+
+  document.getElementById("whatsapp-form")
+  .addEventListener("submit", function(e){
+
+ e.preventDefault();
+
+ let name = document.getElementById("name").value;
+ let phone = document.getElementById("phone").value;
+ let quantity = document.getElementById("quantity").value;
+ let message = document.getElementById("message").value;
+
+ let whatsappMessage =
+ `Bonjour Nissa BAO 👋
+
+ Nom : ${name}
+ Numéro : ${phone}
+ Commande : ${quantity}
+ Message :
+ ${message}`;
+
+ let whatsappURL =
+ "https://wa.me/221774320706?text="
+ + encodeURIComponent(whatsappMessage);
+
+ window.open(whatsappURL, "_blank");
+
+ });
+
+ </script>
+ </body>
+ 
+</html>
+```
