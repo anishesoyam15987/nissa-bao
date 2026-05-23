@@ -404,9 +404,10 @@ body{
         authentique, raffinée et moderne.
       </p>
 
-      <a href="https://wa.me/221774320706">
-        Commander Maintenant
-      </a>
+        <a href="#"
+onclick="goToForm()">
+  Commander Maintenant
+</a>
 
     </div>
 
@@ -583,6 +584,23 @@ document
 .scrollIntoView({
 behavior:"smooth"
 });
+
+}
+ function goToForm(){
+
+document
+.getElementById("name")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+setTimeout(() => {
+
+document
+.getElementById("name")
+.focus();
+
+}, 700);
 
 }
  </script>
